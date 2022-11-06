@@ -1,0 +1,17 @@
+#docker run -d  -name rabbit -p 15672:15672 -p 5672:5672 rabbitmq:management
+# management意味着带有gui管理界面， 15672是gui端口， 5672是service端口
+
+server:
+  port: 8082
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5673
+    username: guest #RabbitMQ默认用户名
+    password: guest #RabbitMQ默认密码
+    virtual-host: / #RabbitMQ默认虚拟机
+    publisher-confirm-type: correlated  #确认消息已发送到交换机(Exchange)
+    publisher-returns: true #确认消息已发送到队列(Queue)
+
+
+
